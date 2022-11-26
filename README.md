@@ -13,7 +13,7 @@
 1. 開啟Julia console 介面並執行:
    ```
    julia> using Pkg              
-   julia> Pkg.activate("path/to/code")          //Group2_A Linear Primal-Dual Multi-Instance SVM for Big Data Classifications的資料夾路徑
+   julia> Pkg.activate("path/to/code")          //Data_mining_final_project_2022-main的資料夾路徑
    julia> Pkg.instantiate()
    ```
    
