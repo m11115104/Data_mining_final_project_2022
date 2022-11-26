@@ -51,12 +51,12 @@ measure = [confusion_matrix, accuracy, bacc]
 Random.seed!(42)
 cv = CV(nfolds=6, shuffle=true)
 
-ours = pdMISVMClassifier(C=1e3, μ=1e-5, ρ=1.2, exact=true)
+ours = pdMISVMClassifier(C=1e2, μ=1e-4, ρ=1.1, exact=true)
 ours_machine = machine(ours, X, y)
 ours_eval = evaluate!(ours_machine, resampling=cv, measure=measure, verbosity=verbosity)
 @show ours_eval
 
-ours_inexact = pdMISVMClassifier(C=1e10, μ=1e-10, ρ=1.2, exact=false)
+ours_inexact = pdMISVMClassifier(C=1e9, μ=1e-9, ρ=1.1, exact=false)
 ours_inexact_machine = machine(ours_inexact, X, y)
 ours_inexact_eval = evaluate!(ours_inexact_machine, resampling=cv, measure=measure, verbosity=verbosity)
 @show ours_inexact_eval
